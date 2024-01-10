@@ -14,6 +14,7 @@ const lang = require(`./lang/${config.lang}.json`)
 const app = new express()
 
 const PORT = config.PORT
+const connectRouter = require('./connect');
 
 let returnURL = `https://${config.HOST}${config.SUBDIR}api/auth/steam/return`
 let realm = `https://${config.HOST}${config.SUBDIR}`
@@ -81,6 +82,7 @@ passport.serializeUser((user, done) => {
 app.set('views', path.join(__dirname, '/views'))
 app.set('view engine', 'ejs')
 app.use(express.static('src/public'))
+app.use(connectRouter)
 
 app.get(config.SUBDIR, (req, res) => {
     if (typeof req.user != 'undefined') {
