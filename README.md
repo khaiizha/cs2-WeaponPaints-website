@@ -17,7 +17,8 @@ Website used for the **[cs2-WeaponPaints](https://github.com/Nereziel/cs2-Weapon
         "DB_HOST": "host",
         "DB_USER": "username",
         "DB_PASS": "password",
-        "DB_DB": "table"
+        "DB_DB": "table",
+        "DB_PORT": "3306"
     },
     "HOST": "example.com or localhost/127.0.0.1",
     "SUBDIR": "/skinsExample/ or just /",
@@ -25,7 +26,17 @@ Website used for the **[cs2-WeaponPaints](https://github.com/Nereziel/cs2-Weapon
     "STEAMAPIKEY": "Your Steam Web API Key",
     "connect": {
         "show": true,
-        "url": "steam://connect/[IP:PORT]?appid=730/[Server password if needed]"
+        "name": "Connect to server",
+        "server": [ 
+            {
+                "name": "Server1",
+                "url": "steam://connect/[IP:PORT]?appid=730/[Server password if needed]"
+            },
+            {
+                "name": "Server2",
+                "url": "steam://connect/[IP:PORT]?appid=730"
+            }
+        ]
     }
 }
 ```
