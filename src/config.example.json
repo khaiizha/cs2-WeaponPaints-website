@@ -14,6 +14,16 @@
     "STEAMAPIKEY": "Your Steam Web API Key",
     "connect": {
         "show": true,
-        "url": "steam://connect/[IP:PORT]?appid=730/[Server password if needed]"
+        "name": "Connect to server",
+        "server": [ 
+            {
+                "name": "Server1",
+                "url": "steam://connect/[IP:PORT]?appid=730/[Server password if needed]"
+            },
+            {
+                "name": "Server2",
+                "url": "steam://connect/[IP:PORT]?appid=730"
+            }
+        ]
     }
 }
