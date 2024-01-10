@@ -64,7 +64,18 @@
                 <a class="navbar-brand" href="#"><%= config.name %></a>      
                 <div class="nav-item d-flex align-items-center">
                     <% if (config.connect.show) { %>
-                        <a href="<%= config.connect.url %>" class="btn btn-outline-warning rounded-pill d-none d-md-block"><small><%= lang.connect %></small></a>
+                        <div class="dropdown">
+                          <button class="btn dropdown-toggle btn-outline-warning rounded-pill d-none d-md-block" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <%= config.connect.name %>
+                          </button>
+                          <ul class="dropdown-menu bg-nav" aria-labelledby="dropdownMenuButton">
+                            <% for (let i = 0; i < config.connect.server.length; i++) { %>
+                              <a href="<%= config.connect.server[i].url %>" class="btn btn-outline-warning rounded-pill d-none d-md-block">
+                                <small><%= config.connect.server[i].name %></small>
+                              </a>
+                            <% } %>
+                          </ul>
+                        </div>
                     <% } %>
                 </div>
             </div>
